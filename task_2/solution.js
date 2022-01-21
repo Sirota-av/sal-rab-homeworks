@@ -5,16 +5,18 @@ function calcShipping(sum, min, shipping) {
 
     // Задание №2.1. Рассчитать доставку
 
-    let shippingSum             // создайте переменную shippingSum
-    if (productSum = 0) {       // если productsSum равно 0,
-        shippingSum = 0;        // то shippingSum присвоить значение 0
+    let shippingSum;                    // создайте переменную shippingSum
+
+    if (productsSum = 0) {              // если productsSum равно 0,
+        shippingSum = 0;                // то shippingSum присвоить значение 0
     }
-    if (productsSum >= freeShippingMinSum) {    // если productsSum Больше или равна freeShippingMinSum,
-        shippingSum = 0                         // то shippingSum присвоить значение 0
-        
+
+    if (productsSum >= freeShippingMinSum) {        // если productsSum Больше или равна freeShippingMinSum,
+        shippingSum = 0;                            // то shippingSum присвоить значение 0    
     }
-    if (productsSum >0 && productsSum < freeShippingMinSum) {   // если productsSum больше 0 и меньше freeShippingMinSum,
-        shippingSum = shippingPrice                             // то shippingSum присвоить значение shippingPrice
+
+    if (productsSum >0 && productsSum < freeShippingMinSum) {       // если productsSum больше 0 и меньше freeShippingMinSum,
+        shippingSum = shippingPrice;                                // то shippingSum присвоить значение shippingPrice
     }                           
 
     // Конец решения задания №2.1.
@@ -29,10 +31,10 @@ function calcDiscount(sum, min, discount) {
 
     // Задание №2.2. Рассчитать скидку
 
-    let discountSum;                            // создайте переменную discountSum
-    if (productsSum >= discountMinSum) {        // если productsSum больше или равно discountMinSum,
-       discountSum = discountPart * productsSum;              // то присвойте discountSum значение discountPart процентов от productsSum,
-       else discountSum = 0;                    // иначе присвойте discountSum значение 0
+    let discountSum;                                    // создайте переменную discountSum
+    if (productsSum >= discountMinSum) {                // если productsSum больше или равно discountMinSum,
+       discountSum = productsSum * discountPart;}       // то присвойте discountSum значение discountPart процентов от productsSum,
+       else {discountSum = 0;                           // иначе присвойте discountSum значение 0
     }
                         
     
