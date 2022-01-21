@@ -7,7 +7,7 @@ function calcShipping(sum, min, shipping) {
 
     let shippingSum;                    // создайте переменную shippingSum
 
-    if (productsSum = 0) {              // если productsSum равно 0,
+    if (productsSum == 0) {             // если productsSum равно 0,
         shippingSum = 0;                // то shippingSum присвоить значение 0
     }
 
@@ -31,16 +31,16 @@ function calcDiscount(sum, min, discount) {
 
     // Задание №2.2. Рассчитать скидку
 
-    let discountSum;                                    // создайте переменную discountSum
-    if (productsSum >= discountMinSum) {                // если productsSum больше или равно discountMinSum,
-       discountSum = productsSum * discountPart;}       // то присвойте discountSum значение discountPart процентов от productsSum,
-       else {discountSum = 0;                           // иначе присвойте discountSum значение 0
-    }
-                        
-    
-   
-    
+    let discountSum;                                        // создайте переменную discountSum
 
+    if (productsSum >= discountMinSum){                     // если productsSum больше или равно discountMinSum,
+      discountSum = productsSum * discountPart;             // то присвойте discountSum значение discountPart процентов от productsSum,
+    } 
+    if (productsSum < discountMinSum) {
+      discountSum = 0;                                      // иначе присвойте discountSum значение 0 
+    }
+      
+    
     // Конец решения задания №2.2.
 
     return discountSum;
@@ -54,7 +54,7 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
 
     let totalSum;                       // создайте переменную totalSum
     totalSum = productsSum;             // присвойте totalSum значение productsSum
-    totalSum = totalSum * discountSum;  // уменьшите totalSum на discountSum
+    totalSum = (totalSum) - (discountSum);  // уменьшите totalSum на discountSum
 
     let shippingSum = calcShipping(totalSum, shippingFreeMinSum, shippingPrice); // не изменяйте эту строку!!!
 
