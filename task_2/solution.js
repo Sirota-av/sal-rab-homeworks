@@ -31,19 +31,19 @@ function calcDiscount(sum, min, discount) {
 
     // Задание №2.2. Рассчитать скидку
 
-    let discountSum;                                        // создайте переменную discountSum
+    let discoutPrice;                                        // создайте переменную discountSum
 
     if (productsSum >= discountMinSum){                     // если productsSum больше или равно discountMinSum,
-      discountSum = productsSum * discountPart;             // то присвойте discountSum значение discountPart процентов от productsSum,
+        discoutPrice = productsSum * discountPart;             // то присвойте discountSum значение discountPart процентов от productsSum,
     } 
     if (productsSum < discountMinSum) {
-      discountSum = 0;                                      // иначе присвойте discountSum значение 0 
+        discoutPrice = 0;                                      // иначе присвойте discountSum значение 0 
     }
       
     
     // Конец решения задания №2.2.
 
-    return discountSum;
+    return discoutPrice;
 }
 
 function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shippingPrice}) {
