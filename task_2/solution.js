@@ -31,26 +31,26 @@ function calcDiscount(sum, min, discount) {
 
     // Задание №2.2. Рассчитать скидку
 
-    let discoutPrice;                               // создайте переменную discountSum
+    let discountPrice;                               // создайте переменную discountSum
     if (productsSum >= discountMinSum) {            // если productsSum больше или равно discountMinSum,
-        discoutPrice = discountPart;  // то присвойте discountSum значение discountPart процентов от productsSum,
+        discountPrice = discountPart;  // то присвойте discountSum значение discountPart процентов от productsSum,
     }             
-       else {discoutPrice = 0;}                                     // иначе присвойте discountSum значение 0  
+       else {discountPrice = 0;}                                     // иначе присвойте discountSum значение 0  
     
     // Конец решения задания №2.2.
 
-    return discoutPrice;
+    return discountPrice;
 }
 
 function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shippingPrice}) {
     let productsSum = sum;
-    let discoutPrice = calcDiscount(sum, discountMinSum, discountPart);
+    let discountPrice = calcDiscount(sum, discountMinSum, discountPart);
 
     // Задача №2.3. Рассчитать скидки и доставку в корзине
 
     let totalSum;                       // создайте переменную totalSum
     totalSum = productsSum;             // присвойте totalSum значение productsSum
-    totalSum = totalSum - discoutPrice;  // уменьшите totalSum на discountSum
+    totalSum = totalSum - discountPrice;  // уменьшите totalSum на discountSum
 
     let shippingSum = calcShipping(totalSum, shippingFreeMinSum, shippingPrice); // не изменяйте эту строку!!!
 
@@ -62,5 +62,5 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
 
     // Конец решения задачи №2.3.
 
-    return {discount: discoutPrice, freeShipping, shipping: shippingSum, total: totalSum};
+    return {discount: discountPrice, freeShipping, shipping: shippingSum, total: totalSum};
 }
