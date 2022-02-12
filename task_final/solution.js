@@ -33,24 +33,21 @@
 //    }
 // }
 
-function sendRequest(name, phone, address, goods, sum) {
-    //let data = {goods: [], order: {}};
-    let data = {client: {name, phone},order: {address, sum}, goods: []};
 
+function sendRequest(name, phone, address, goods, sum) {
+
+    let data = {client: {name, phone}, order: {address, sum}, goods: []};
     let countOfGoods = goods.length;
 
-    for (let i = 0; i <= countOfGoods-1; i += 1) {    
-        
+    for (let i = 0; i <= countOfGoods-1; i += 1) {
         data.goods.push(goods[i].title);
-        //data.goods.push(goods[i].count);
-    
-        data.order = {address, sum};
+        data.goods.push(goods[i].count);
         data.client = name +" "+ phone;
-        //data.client.phone = (phone);
-
+        data.order.address = `ул. ${address.street}, дом ${address.house}, ${address.entrance} подъезд, ${address.floor} этаж, кв ${address.flat}`;
+        data.order.sum = sum;
     }
-    let jsonData = JSON.stringify({data});
-    
+    let jsonData = JSON.stringify(data);
+  
 
     return jsonData;
 }
